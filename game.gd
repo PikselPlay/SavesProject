@@ -2,21 +2,6 @@ extends Node2D
 var money = 0
 
 var data_path  = "user://Saves.data"
-var start_data =  {
-	"upgrade1": {
-			"level": 0,
-			"cost": 10
-	},
-	"upgrade2": {
-			"level": 0,
-			"cost": 25
-	},
-	"upgrade3":
-		{
-			"level": 1,
-			"cost": 50
-		}
-}
 var data = {
 	"upgrade1": {
 			"level": 0,
@@ -50,13 +35,15 @@ func _on_click_pressed() -> void:
 
 func _save():
 	var config = ConfigFile.new()
+	#config.set_value("Секция","Название значения","Значение") - сохранить значение
 	config.set_value("Main","money",money)
 	config.set_value("Main","data",data)
 	config.save(data_path)
 func _load():
 	var config = ConfigFile.new()
+	#переменная = config.get_value("Секция","Название значения","Начальное значение") - загрузить значение
 	config.load(data_path)
-	money = config.get_value("Main","money",0)
+	money = config.get_value("Main","money",0) 
 	data = config.get_value("Main","data",data)
 	
 	
