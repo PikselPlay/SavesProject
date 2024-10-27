@@ -78,11 +78,6 @@ func _on_reset_pressed() -> void:
 	_load()
 
 
-func _on_save_timer_timeout() -> void:
-	print("Данные сохранены.")
-	#_save()
-
-
 func _on_save_pressed() -> void:
 	_save()
 

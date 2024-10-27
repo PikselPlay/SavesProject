@@ -64,10 +64,6 @@ offset_bottom = 524.0
 theme_override_font_sizes/font_size = 36
 text = "Reset progress"
 
-[node name="SaveTimer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="CenterContainer/Click" to="." method="_on_click_pressed"]
@@ -75,4 +71,3 @@ autostart = true
 [connection signal="pressed" from="Upgrade2" to="." method="_on_upgrade_2_pressed"]
 [connection signal="pressed" from="Upgrade3" to="." method="_on_upgrade_3_pressed"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
-[connection signal="timeout" from="SaveTimer" to="." method="_on_save_timer_timeout"]
