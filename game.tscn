@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://btrom5iblt7l1"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_r1m0k"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_r1m0k")
+
+[node name="Save" type="Button" parent="."]
+offset_left = 1.0
+offset_top = 527.0
+offset_right = 578.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 66
+text = "Save"
+
+[node name="Load" type="Button" parent="."]
+offset_left = 578.0
+offset_top = 527.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 66
+text = "Load
+"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 785.0
+offset_bottom = 527.0
+
+[node name="Click" type="Button" parent="CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 226
+text = "  0  "
+
+[node name="Upgrade1" type="Button" parent="."]
+offset_left = 785.0
+offset_top = 2.0
+offset_right = 1155.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 36
+text = "Upgrade1: 10"
+
+[node name="Upgrade2" type="Button" parent="."]
+offset_left = 785.0
+offset_top = 68.0
+offset_right = 1155.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 36
+text = "Upgrade2: 25"
+
+[node name="Upgrade3" type="Button" parent="."]
+offset_left = 785.0
+offset_top = 135.0
+offset_right = 1155.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 36
+text = "Upgrade3: 50"
+
+[node name="Reset" type="Button" parent="."]
+visible = false
+offset_left = 785.0
+offset_top = 440.0
+offset_right = 1155.0
+offset_bottom = 524.0
+theme_override_font_sizes/font_size = 36
+text = "Reset progress"
+
+[node name="SaveTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="CenterContainer/Click" to="." method="_on_click_pressed"]
+[connection signal="pressed" from="Upgrade1" to="." method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="Upgrade2" to="." method="_on_upgrade_2_pressed"]
+[connection signal="pressed" from="Upgrade3" to="." method="_on_upgrade_3_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="timeout" from="SaveTimer" to="." method="_on_save_timer_timeout"]
